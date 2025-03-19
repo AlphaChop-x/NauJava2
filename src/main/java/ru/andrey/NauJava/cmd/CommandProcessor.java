@@ -30,7 +30,7 @@ public class CommandProcessor {
             }
             case "find" -> {
                 try {
-                    artefactService.findById(Long.valueOf(cmd[1]));
+                    System.out.println(artefactService.findById(Long.valueOf(cmd[1])));
                 } catch (Exception e) {
                     System.out.println("incorrect type of id");
                 }

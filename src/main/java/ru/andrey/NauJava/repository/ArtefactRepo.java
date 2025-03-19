@@ -35,7 +35,7 @@ public class ArtefactRepo implements CrudRepository<Artefact, Long> {
     //Метод для чтения артефакта
     @Override
     public Artefact read(Long id) {
-//        System.out.println("Reading artefact with id: " + id);
+        System.out.println("Reading artefact with id: " + id);
         for (Artefact artefact : artefactContainer) {
             if (artefact.getId().equals(id)) {
                 System.out.println("Artefact found!");
