@@ -31,7 +31,7 @@ public class CommandProcessor {
             case "find" -> {
                 System.out.println(artefactService.findById(Long.valueOf(cmd[1])));
             }
-            case "update" -> {
+            case "updateQuality" -> {
                 artefactService.updateArtefactQuality(Long.valueOf(cmd[1]), cmd[2]);
             }
             case "delete" -> {
@@ -50,7 +50,7 @@ public class CommandProcessor {
                         "\nList of commands:" +
                         "\n1) create [id] [name] [quality]" +
                         "\n2) find [id]" +
-                        "\n3) update [id] [quality]" +
+                        "\n3) updateQuality [id] [quality]" +
                         "\n4) delete [id]");
                 while (true) {
                     System.out.print("> ");
