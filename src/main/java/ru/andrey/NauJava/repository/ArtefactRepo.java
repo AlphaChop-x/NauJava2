@@ -35,10 +35,10 @@ public class ArtefactRepo implements CrudRepository<Artefact, Long> {
     //Метод для чтения артефакта
     @Override
     public Artefact read(Long id) {
-        System.out.println("Reading Artefact: " + id);
+//        System.out.println("Reading artefact with id: " + id);
         for (Artefact artefact : artefactContainer) {
             if (artefact.getId().equals(id)) {
-                System.out.println("Found Artefact: " + artefact);
+                System.out.println("Artefact found!");
                 return artefact;
             }
         }
@@ -49,14 +49,16 @@ public class ArtefactRepo implements CrudRepository<Artefact, Long> {
     //Метод для апдейта артефакта
     @Override
     public void update(Artefact artefact) {
-        System.out.println("Updating Artefact: " + artefact);
         artefactContainer.remove(artefact);
         artefactContainer.add(artefact);
+        System.out.println("Artefact updated:\n" + artefact);
     }
 
     //Метод для удаление артефакта по id
     @Override
     public void delete(Long id) {
+        System.out.println("Deleting Artefact with id: " + id);
         artefactContainer.removeIf(artefact -> artefact.getId().equals(id));
+        System.out.println("Artefact deleted!");
     }
 }

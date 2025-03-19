@@ -7,11 +7,9 @@ public class Artefact {
 
     @Override
     public String toString() {
-        return "Artefact{" +
-                "id=" + id +
-                ", artefactName='" + artefactName + '\'' +
-                ", artefactQuality='" + artefactQuality + '\'' +
-                '}';
+        return  "id: " + id +
+                "\nartefactName: " + artefactName +
+                "\nartefactQuality: " + artefactQuality;
     }
 
     public Long getId() {

@@ -29,18 +29,29 @@ public class CommandProcessor {
                 }
             }
             case "find" -> {
-                System.out.println(artefactService.findById(Long.valueOf(cmd[1])));
+                try {
+                    artefactService.findById(Long.valueOf(cmd[1]));
+                } catch (Exception e) {
+                    System.out.println("incorrect type of id");
+                }
             }
             case "updateQuality" -> {
-                artefactService.updateArtefactQuality(Long.valueOf(cmd[1]), cmd[2]);
+                try {
+                    artefactService.updateArtefactQuality(Long.valueOf(cmd[1]), cmd[2]);
+                } catch (Exception e) {
+                    System.out.println("incorrect type of id");
+                }
             }
             case "delete" -> {
-                artefactService.deleteById(Long.valueOf(cmd[1]));
+                try {
+                    artefactService.deleteById(Long.valueOf(cmd[1]));
+                } catch (Exception e) {
+                    System.out.println("incorrect type of id");
+                }
             }
             default -> System.out.println("Unknown command");
         }
     }
-
 
     @Bean
     public CommandLineRunner commandScanner() {
